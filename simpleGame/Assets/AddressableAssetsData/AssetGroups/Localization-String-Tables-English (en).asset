@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5df96b8c563ae264c851dda4b127e342
   m_SerializeEntries:
+  - m_GUID: 04f0ea46ae86b184da8f7cba46921833
+    m_Address: newGameTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f3c7163ce6d4e4a4a8ed46e74f6ee74d
     m_Address: languageTable_en
     m_ReadOnly: 1

@@ -10,39 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: languageTable Shared Data
+  m_Name: newGameTable Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: languageTable
-  m_TableCollectionNameGuidString: 0592bf81ee6597948b7464db95e9d8c3
+  m_TableCollectionName: newGameTable
+  m_TableCollectionNameGuidString: 40c0430bbe915b548bae3d559b8315fd
   m_Entries:
-  - m_Id: 6787039232
-    m_Key: newGame
+  - m_Id: 3607756800
+    m_Key: "GameName\t"
     m_Metadata:
       m_Items: []
-  - m_Id: 202711367680
-    m_Key: load
+  - m_Id: 71966523392
+    m_Key: MapSize
     m_Metadata:
       m_Items: []
-  - m_Id: 266880024576
-    m_Key: multiplay
+  - m_Id: 179005161472
+    m_Key: Resource
     m_Metadata:
       m_Items: []
-  - m_Id: 377009864704
-    m_Key: setting
+  - m_Id: 269094617088
+    m_Key: Max Player
     m_Metadata:
       m_Items: []
-  - m_Id: 159416465358848
-    m_Key: close
+  - m_Id: 392675590144
+    m_Key: Enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518970277888
+    m_Key: Start
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 7243030969776865304
+    rid: 7243030971040923650
   references:
     version: 2
     RefIds:
-    - rid: 7243030969776865304
+    - rid: 7243030971040923650
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1734148778523
+        m_CustomEpoch: 1734186115779
