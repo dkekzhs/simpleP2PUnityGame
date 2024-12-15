@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 092d2984622c6614ea5bd05d4366dd68
+    m_Address: Assets/Language/sizeTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 40c0430bbe915b548bae3d559b8315fd
     m_Address: Assets/Language/newGameTable Shared Data.asset
     m_ReadOnly: 1

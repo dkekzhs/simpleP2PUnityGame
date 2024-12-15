@@ -16,4 +16,9 @@ public class PlayerEnemySlider : MonoBehaviour
     {
         playerSetting.SetMaxEnemies((int)enemySlider.value);
     }
+
+    private void initSetting()
+    {
+
+    }
 }

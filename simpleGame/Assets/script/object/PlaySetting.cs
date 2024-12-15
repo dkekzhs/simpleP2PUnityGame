@@ -2,13 +2,15 @@ using System;
 using System.IO;
 using UnityEngine;
 
+[Serializable]
 public class PlayerSetting : MonoBehaviour
 {
     private string gameName = "ASDASD"; 
     private MapSize mapSize = MapSize.Small;  
     private ResourceSize resourceSize = ResourceSize.Average; 
     private int maxPlayers = 5; 
-    private int maxEnemies = 2; 
+    private int maxEnemies = 2;
+    private string filePath;
 
     private readonly int MAX_PLAYER_LIMIT = 8;
     private readonly int MAX_ENEMY_LIMIT = 4;
@@ -146,12 +148,25 @@ public class PlayerSetting : MonoBehaviour
         bool isValid = Validateion();
         if (isValid)
         {
+            SaveToFile();
             Debug.Log("모든 설정이 완료되었습니다! 게임을 시작합니다.");
         }
         else
         {
             Debug.LogError("설정에 문제가 있어 게임을 시작할 수 없습니다.");
         }
+    }
+    public void SaveToFile()
+    {
+        if (File.Exists(filePath))
+        {
+            Debug.Log("Exist SaveName: 이미존재하는 세이브이름입니다.");
+            return;
+        }
+        filePath = Path.Combine(Application.persistentDataPath,gameName+"_save.json");
+        string jsonData = JsonUtility.ToJson(this, true);
+        File.WriteAllText(filePath, jsonData);
+        Debug.Log("Data saved to: " + filePath);
     }
 }
 
