@@ -21,13 +21,6 @@ public class Region
     public string owner;         // 소유자 (플레이어, 적 등)
 }
 
-[Serializable]
-public class Fleet
-{
-    public string name;
-    public int units;           // 함대에 포함된 유닛 수
-    public string status;       // 이동, 대기 등 상태
-}
 
 [Serializable]
 public class EventData
