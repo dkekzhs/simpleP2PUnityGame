@@ -6,8 +6,12 @@ using UnityEngine;
 public class PlayerData
 {
     public string playerName;
-    public int score;
-    public int level;
+    public string playerLevel;
+    public float totalUnitSocre;
+    public float totalSocre;
+    public float totalResearchScore;
+    public float totalScore;
+
 
     public void SaveToFile(string filePath)
     {

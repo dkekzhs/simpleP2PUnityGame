@@ -17,15 +17,4 @@ public class FileObserver
         observedData.SaveToFile(filePath);
     }
 
-    public void UpdateScore(int newScore)
-    {
-        observedData.score = newScore;
-        OnDataChanged();
-    }
-
-    public void UpdateLevel(int newLevel)
-    {
-        observedData.level = newLevel;
-        OnDataChanged();
-    }
 }
