@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: newGameTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: newGameTable
+  m_TableCollectionNameGuidString: 40c0430bbe915b548bae3d559b8315fd
+  m_Entries:
+  - m_Id: 3607756800
+    m_Key: "GameName\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71966523392
+    m_Key: MapSize
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179005161472
+    m_Key: Resource
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269094617088
+    m_Key: Max Player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 392675590144
+    m_Key: Enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518970277888
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7243030971040923650
+  references:
+    version: 2
+    RefIds:
+    - rid: 7243030971040923650
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1734186115779
