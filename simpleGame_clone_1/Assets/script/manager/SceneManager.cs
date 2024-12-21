@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
-    public static SceneManager Instance { get; private set; }
+    public static SceneController Instance { get; private set; }
 
 
-    public void OnMoveMainScene()
+    public void LoadMainScene()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 
 

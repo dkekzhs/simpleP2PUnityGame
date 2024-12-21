@@ -1,5 +1,6 @@
 using Mirror;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class RoomManager : NetworkManager
@@ -36,24 +37,38 @@ public class RoomManager : NetworkManager
         networkAddress = ipAddress;  
         StartClient();
     }
+
+
+    void LoadMainScene()
+    {
+        SceneController.Instance.LoadMainScene();
+    }
     void LoadLobbyScene()
     {
         ServerChangeScene("RoomScene");  // 대기방 씬 이름으로 변경
     }
 
-    // 게임 시작 - 대기방에서 호출
-    public void StartGame()
-    {
-        ServerChangeScene("InGameScene");  // 게임 씬으로 이동
-    }
+
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
+        base.OnServerAddPlayer(conn);
+
         GameObject player = Instantiate(playerPrefab);
-        NetworkServer.AddPlayerForConnection(conn, player);
+        PlayerRoomData playerData = player.GetComponent<PlayerRoomData>();
+        players.Add(playerData);
+        if (playerData != null)
+        {
+            Debug.Log($"플레이어 추가됨: {playerData.playerName}");
+        }
+        else
+        {
+            Debug.LogError("PlayerRoomData 초기화 실패");
+        }
     }
     public override void OnStopHost()
     {
-        Debug.Log("서버가 종료되었습니다.");
+        players.Clear();
+        Debug.Log("서버 종료");
     }
 
     public override void OnClientConnect()
@@ -65,7 +80,37 @@ public class RoomManager : NetworkManager
     {
         Debug.Log("클라이언트가 서버에서 접속을 끊었습니다.");
     }
+    [Server]
+    public void StartGame()
+    {
+        Debug.Log("게임 시작");
+        ServerChangeScene("InGameScene");
+    }
+    [Server]
+    public void LeaveRoom(NetworkConnectionToClient conn)
+    {
+        PlayerRoomData playerToRemove = players.Find(p => p.connectionToClient == conn);
+        if (playerToRemove != null)
+        {
+            players.Remove(playerToRemove);
+        }
 
+        Debug.Log($"플레이어 {conn.connectionId} 나감");
+        conn.Disconnect();
+    }
+
+    [Server]
+    public void CheckAllPlayersReady()
+    {
+        foreach (PlayerRoomData player in FindObjectsOfType<PlayerRoomData>())
+        {
+            if (!player.isReady)
+            {
+                return;
+            }
+        }
+        RoomManager.Instance.StartGame();
+    }
 
 
 }
